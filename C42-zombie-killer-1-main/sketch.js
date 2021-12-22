@@ -6,7 +6,7 @@ function preload(){
   
   shooterImg = loadImage("assets/shooter.png")
   shooter_shooting = loadImage("assets/shooter_3.png")
-  
+  bllImg = loadImage("assets/bll.png")
   bgImg = loadImage("assets/sand.jpg")
 
 }
@@ -26,7 +26,7 @@ bg.scale = 1.1
 player = createSprite(displayWidth/2, displayHeight-230, 50, 50);
  player.addImage(shooterImg)
    player.scale = 0.3
- 
+
   //player.debug = true
    // player.debug = false
     // player.Debug =false
@@ -62,18 +62,13 @@ if(keyDown("RIGHT_ARROW")||touches.length>0){
 //release bullets and change the image of shooter to shooting position when space is pressed
 if(keyWentDown("space")){
  
-  player.addImage(shooter_shooting)
- 
+  b = createSprite(player.x,player.y, 50, 50);
+   b.addImage(bllImg)
+     b.scale = 0.09
+ b.velocityY=-5
 }
 
-//player goes back to original standing image once we stop pressing the space bar
-else if(keyDown("space")){
-  //player.addImage( shooter_shooting )
- // player.addImage()
- // player.addImage(shooterImg)
- //player.addImage(shooter_1.png)
 
-}
 
 drawSprites();
 
